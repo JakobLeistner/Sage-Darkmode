@@ -1,0 +1,41 @@
+.sagehr-panel
+{
+    max-width: 1000px !important;
+    border-width: 2px !important;
+    border-radius: 3px !important;
+    margin: auto !important;   
+}
+
+.sagehr-layout-content
+{
+    top: 0 !important;
+}
+
+
+.sagehr-layout-container
+{
+    min-height: 0;
+}
+
+#details
+{
+    left: 0 !important;
+}
+
+th[data-title="Arbeitsort"]
+{
+    /* width: 21%; */
+    width: 222px;
+}
+td:has(> span[title="Büro"])
+{
+    /* width: 21.4%;  */
+    width: 223.64px;
+}
+
+
+/* Hide unnecessary elements in iframe */
+#expanderLeft, .sagehr-layout-header, .sagehr-layout-footer
+{
+    display: none;
+}

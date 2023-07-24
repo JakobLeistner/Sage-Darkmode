@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "sage darkmode",
+  "version": "1.3.3.7",
+  "description": "sage darkmode",
+
+  "icons": {
+    "16":  "images/icon-16.png",
+    "32":  "images/icon-32.png",
+    "48":  "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon-16.png",
+      "48": "images/icon-48.png"
+    } 
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "css": ["css/main.css"],
+      "matches": [
+        "https://mportal.infoteam.de/*"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["/images/infoteam-logo.png", "css/bright.css", "css/main.css", "css/iframe.css"],
+      "matches": ["https://mportal.infoteam.de/*"]
+    }
+  ],
+  "permissions": [
+    "activeTab", "scripting"
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  }
+}

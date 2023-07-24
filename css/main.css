@@ -1,0 +1,580 @@
+body 
+{
+    --background: #212121;
+    --background2: #252525;
+    --backgroundNavBar: #414141;
+    --navigationBackground: #0D0D0D;
+    --navigationHover: #333;
+
+    --grayText: #888888;
+    --text: #D0D0D0;
+    --highlightText :#F0F0F0;
+
+    --red: #C1002B;
+    --brightRed: #ff003c;
+    --darkGray: #1A1A1A;
+
+
+    --holidays: #2D2D2D;
+    --offday: #41AF3D;
+    --weekend: #4a4a4a;
+    --birthday: #306afc;
+
+    background-color: var(--background) !important;
+}
+
+
+/* Scrollbar */
+*::-webkit-scrollbar
+{
+    width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: hsla(0, 0%, 85%, .3);
+    border-radius: 5px;
+}
+*::-webkit-scrollbar-thumb:hover {
+    background: hsla(0, 0%, 55%, .3);
+}
+
+*::-webkit-scrollbar-corner {
+    border-radius: 5px;
+}
+
+
+
+/* Main Page background and inheritance */
+#ctl00_sageHrFooter, #ctl00_contentContainer, #ctl00_footer, .sagehr-layout-footer
+{
+    background: var(--background) !important;
+    color: var(--text);
+}
+
+
+/* Header */
+
+/* Header takes entire page width */
+#ctl00_header, .sagehr-layout-header, .sagehr-layout-content
+{
+    left: 0 !important;
+    right: 0 !important;
+    overflow: hidden;
+}
+/* Invert color of Sage logo */ 
+.sagehr-header-sage-logo
+{
+    filter: invert(1);
+}
+/* Hide infoteam logo until the darkmode logo is loaded */
+.sagehr-header-main-logo > img, .sagehr-layout-header-id-logo > img 
+{
+    display: none;
+}
+/* Hide weird text behind the infoteam logo */
+.sagehr-header-main-title, #headerBrandingTitle
+{
+    display: none !important;
+}
+/* Links above NavBar */
+.sagehr-header-main-data a
+{
+    color: var(--brightRed) !important;
+}
+.sagehr-layout-header-info a
+{
+    color: var(--red);
+}
+/* company and employee info above NavBar */
+#app_company_name, #app_employee_name
+{
+    color: var(--grayText);
+}
+/* Help icon above NavBar */
+#app_help, #ctl00_imgHelp
+{
+    filter: invert(.25);
+}
+
+
+
+/* NavBar */
+/* main page (and others) */
+#navBar
+{
+    padding: 0px !important;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    height: 52px;
+}
+#iconBar
+{
+    background: var(--backgroundNavBar);
+    padding: 0 7px !important;
+    padding-bottom: 20px;
+    height: 54px;
+}
+.IconBarButtonSelected
+{
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--red);
+}
+.IconBarButtonHover
+{
+    background: var(--navigationHover) !important;
+    border-top: 5px solid var(--navigationHover);
+    border-bottom: 5px solid var(--navigationHover);
+}
+
+#SecondaryBar
+{
+    display: none;
+}
+.sagehr-content
+{
+    top: 64px;
+}
+
+
+/* weird other pages */
+.sagehr-layout-header-pnav
+{
+    background: var(--backgroundNavBar) !important;
+    height: 54px !important; 
+    padding: 0px 7px !important;
+    margin-top: 3px;
+    margin-bottom: 0px;
+    border-width: 0px !important;
+}
+.sagehr-layout-header-pnav-button:hover, .sagehr-layout-header-pnav-item:hover
+{
+    background-color: var(--navigationHover) !important;
+}
+.sagehr-layout-header-pnav-item
+{
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    border-right-color: #454545 !important;
+    height: 48px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+.sagehr-layout-header-pnav-item > img
+{
+    margin-top: 4px !important;
+}
+.sagehr-layout-header-pnav-item-selected
+{
+    background: var(--red) !important;
+}
+#asyncBackground, #dashboard
+{
+    top: 10px !important;
+}
+
+
+
+
+/* Main Page tiles */
+/* Tile sort button */
+.Startmenue
+{
+    border-radius: 2px;
+    border: var(--background2) !important;
+    background-color: var(--navigationHover) !important;
+}
+.StartmenueHover
+{
+    border-radius: 2px;
+    border: var(--navigationBackground) !important;
+    background-color: #141414 !important;
+}
+.StartmenueSelected
+{
+    border: var(--red) !important;
+    background-color: var(--red) !important;
+}
+
+
+
+
+.sagehr-roundpanel
+{
+    border-width: 2px !important;
+    border-radius: 3px;
+}
+.ui-state-default
+{
+    background: var(--background) !important;
+}
+
+.ui-state-default > .sagehr-roundpanel > table > tbody > tr > td
+{
+    background: var(--background) !important;
+}
+.k-link
+{
+    filter: invert(1) !important;
+}
+
+/* .k-calendar NOT WORKING
+{
+    filter: invert(1) !important;
+    background: #111 !important;
+} */
+
+#Zwterminal > .sagehr-roundpanel > table > tbody > tr > td > table > tbody > tr > td > .RoundPanelContentPanel > div > div > center > div
+{
+    background: #EEE !important;
+    filter: invert(1);
+}
+#ctl00_cphContent_terminal_tblDisplayStandard
+{
+    background: #DDD !important;
+}
+
+/* Time tile */
+#ctl00_cphContent_gridHomeZeitkonten
+{
+    border: none;
+}
+#ctl00_cphContent_gridHomeZeitkonten_col1
+{
+    background: var(--background);
+}
+#ctl00_cphContent_gridHomeZeitkonten_col1 > table > tbody > tr > td, #ctl00_cphContent_gridHomeZeitkonten_col2 > table > tbody > tr > td
+{
+    color: var(--text);
+}
+#ctl00_cphContent_gridHomeZeitkonten_DXDataRow0 > .dxgv
+{
+    border: none;
+}
+
+/* Ausschreibungen tile */
+#ctl00_cphContent_gridAusschreibungHome_DXMainTable
+{
+    background: var(--background2) !important;
+}
+#ctl00_cphContent_gridAusschreibungHome
+{
+    border: none;
+}
+.dxgvHeader_Office2010Silver
+{
+    /* border: none !important; */
+    border-color: var(--background) !important;
+    background: var(--background2) !important;
+}
+.dxgvHeader_Office2010Silver > table > tbody > tr > td
+{
+    color: var(--text);
+}
+
+
+
+/* time page */
+
+.detailsHeader
+{
+    color: var(--text) !important;
+}
+
+.k-input:hover
+{
+    border-color: var(--text) !important; 
+}
+
+.k-input:hover > input, .k-input:hover > button 
+{
+    background: var(--navigationBackground) !important;
+}
+
+.k-input-inner
+{
+    background: var(--background) !important; 
+    color: var(--text) !important;
+}
+
+.k-input:not(:hover) > .k-input-button, .k-input:not(:hover) > .k-button:not(:hover)
+{
+    background: var(--background) !important;
+}
+
+.btn-secondary
+{
+    background: var(--background2) !important;
+    color: var(--text) !important;
+    border-color: var(--text) !important;
+}
+.btn-secondary:hover
+{
+    background-color: var(--navigationBackground) !important;
+    color: var(--text) !important;
+}
+
+/* Remove line between upper buttons and table */
+#timepairs
+{
+    top: 30px !important;
+    border: none !important;
+}
+
+#timepairsGrid
+{
+    background: var(--background);
+    color: var(--text);
+}
+
+#expanderLeft
+{
+    background: var(--background);
+}
+
+.k-header
+{
+    background-image: none !important;
+    background: var(--background) !important;
+    color: var(--text) !important;
+}
+
+.k-alt
+{
+    background: var(--background2) !important;
+}
+
+#timepairsGrid
+{
+    text-shadow: none !important;
+}
+
+.sagehr-panel
+{
+    top: 6px !important;
+    border-color: var(--red) !important;
+}
+
+.k-grid tr:hover {
+    background: var(--navigationBackground) !important;
+}
+
+img[src="/HRPortal/Content/Images/process_16x16.png"]
+{
+    filter: invert(1);
+} 
+
+
+
+/* employee page */
+.sagehr-layout-header-snav-item-selected
+{
+    background: var(--red) !important;
+}
+#myHoliday > .content > div > table > tbody > tr
+{
+    color: var(--red) !important;
+}
+.btn-primary
+{
+    background: var(--red) !important;
+    border-color: var(--red) !important;
+}
+.btn-primary:hover
+{
+    background: var(--navigationHover) !important;
+    border-color: var(--navigationHover) !important;
+}
+#myHolidayChart > svg > g > g > g > g > path
+{
+    fill: var(--red) ;
+}
+
+#myHolidayChart > svg > g > g > g > g ~ g > path
+{
+    fill: var(--text);
+}
+.overviewChartValue
+{
+    color: var(--red) !important;
+}
+
+
+
+/* calender page */
+/* 10px space between years */
+.lastOfYear
+{
+    border-color: var(--background) !important;
+}
+/* color for month names backgrounds */
+.month > div
+{
+    background: var(--background2) !important;
+    border-color: var(--background) !important;
+}
+/* color for month name text */
+.month > .year ~ div
+{
+    color: var(--grayText);
+}
+.month-active > .year ~ div
+{
+    color: var(--highlightText) !important;
+    font-style: bold !important;
+}
+/* day split color and shadow on scroll behind normal days removed */
+.month > .items > .monthItem
+{
+    border-color: var(--background);
+    background: var(--background);
+}
+/* shadow on scroll behind other days removed */
+.month > .items > .dayWeekend > .fullDay, .month > .items > .monthItem > .fullDay:has(+ .dayitem-overlay[title ^= "Schulferien"])
+{
+    background: none !important;
+}
+
+/* inactive days */
+.month > .items > .monthItem > .inactive
+{
+    background: var(--background2);
+}
+/* days without any extra information  */
+.month > .items > .monthItem > .dayitem-overlay[title = ""]:not(.ui-selected)
+{
+    background: var(--background2);
+}
+/* off days */
+.month > .items > div:not(.dayWeekend) > .dayitem-overlay:not([title = ""]):not([title = "Schule"]):not([title = "Weiterbildung"]):not([title = "Geburtstag"]):not([title = "Krank allgemein"]):not([title = "Urlaub"]):not([title ^= "Schulferien"]):not(.ui-selected)
+{    
+    background: var(--offday);
+    color: var(--highlightText);
+}
+/* birthday */
+.month > .items > div:not(.dayWeekend) > .dayitem-overlay[title = "Geburtstag"]
+{
+    background: var(--birthday);
+    color: var(--text);
+}
+/* weekend days */
+.month > .items > .dayWeekend > .dayitem-overlay
+{
+    background: var(--weekend);
+}
+/* Holidays */
+.month > .items > .monthItem:not(.dayWeekend) > .dayitem-overlay[title ^= "Schulferien"]:not([title = "Schule"]):not([title = "Weiterbildung"]):not([title = "Krank allgemein"]):not([title = "Urlaub"]):not(.ui-selected)
+{
+    background: var(--holidays);
+}
+/* selected day */
+.month > .items > .monthItem > .ui-selected
+{
+    background: var(--red);
+}
+
+/* loading message */
+.sagehr-loading > .sagehr-absolute-fill
+{
+    background: var(--background2) !important;
+}
+/* loading fill */
+.sagehr-loading
+{
+    background: rgba(16, 16, 16, .5) !important;
+}
+
+/* incident popup */
+.sagehr-layout-content > #calendar-events
+{
+    background: var(--background2);
+    color: var(--text);
+}
+.sagehr-absolute-fill > .calendarDetails-content > .calendarDetails-content-header
+{
+    background: var(--background2);
+    color: var(--text);
+}
+.sagehr-absolute-fill > .calendarDetails-content > .calendarDetails-content-header > div > img
+{
+    filter: invert(0.903);
+}
+.sagehr-calendar-event-tile
+{
+    border-color: var(--background2) !important;
+    background: var(--background) !important;
+}
+.sagehr-calendar-event-tile > div
+{
+    background: var(--background) !important;
+}
+.sagehr-layout-content > #calendar-events > .sagehr-absolute-fill
+{
+    border-color: var(--background);
+}
+.sagehr-absolute-fill > .calendarDetails-header > .close
+{
+    filter: invert(1);
+}
+
+/* upper day numbers */
+.month-active > div.year + div, .month-active.monthDayNumber
+{
+    background: var(--red) !important;
+}
+#view > .slider > div > .monthDayNumber
+{
+    background: var(--background2);
+    color: var(--text);
+    border-color: var(--background);
+}
+
+/* upper select my calendar / team calendar */
+.sagehr-layout-container > .sagehr-layout-header > .sagehr-layout-header-snav > .k-menu-horizontal
+{
+    background: var(--background) !important;
+    border: none;
+}
+.sagehr-layout-container > .sagehr-layout-header > .sagehr-layout-header-snav > .k-menu-horizontal > .k-item > .k-link
+{
+    color: var(--background);
+}
+
+/* lower remaining holidays screen */
+#view > .remainingHolidays-container > .calendarDetails-content-content
+{
+    background: var(--background);
+    border-color: var(--background);
+    color: var(--text);
+}
+#view > .remainingHolidays-container > .calendarDetails-content-content > div > div
+{
+    background: var(--background2);
+}
+#view > .remainingHolidays-container > .calendarDetails-content-content > div > div > .sagehr-tabs-selected
+{
+    background: var(--red);
+}
+#view > .remainingHolidays-container > .calendarDetails-content-content > div > div > div:hover
+{
+    background: var(--darkGray);
+}
+#view > .remainingHolidays-container > .calendarDetails-content-content > div > div > div
+{
+    border-color: var(--background);
+}
+/* bold text */
+.sagehr-tab > table > tbody > tr > td > .inner > tbody
+{
+    .category[style = " color: cornflowerblue"], .category[style = "cursor: default; color: cornflowerblue"] 
+    {
+        color: var(--red) !important;
+    }   
+}
+/* remaining holidays text, visible when remaining holidays screen is not visible */
+#view > .remainingHolidays-container > div > span ~ span
+{
+    color: var(--red) !important;
+}
