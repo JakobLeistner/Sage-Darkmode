@@ -329,6 +329,7 @@ time page
 {
     background: var(--background);
     color: var(--text);
+    overflow-x: hidden;
 }
 
 #expanderLeft

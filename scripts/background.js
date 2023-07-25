@@ -30,7 +30,7 @@ function onOpenPopup(tabId)
     console.log("popup clicked");
     console.log(tabId);
     var stylesheetUrl = chrome.runtime.getURL("css/bright.css");
-    linkElement = '<link rel="stylesheet" id="brightStylesheet" type="text/css" href="' + stylesheetUrl + '" >';
+    // linkElement = '<link rel="stylesheet" id="brightStylesheet" type="text/css" href="' + stylesheetUrl + '" >';
     
     if (mode == 1)
     {
