@@ -167,7 +167,7 @@ if (window.location.href == "https://mportal.infoteam.de/mportal/Content/Home.as
 /// Auto click link for redirect ///
 ////////////////////////////////////
 
-if (window.location.href == "https://mportal.infoteam.de/mportal/Logout.aspx" || window.location.href == "https://mportal.infoteam.de/mportal/Login.aspx?logout=true")
+if (window.location.href == "https://mportal.infoteam.de/mportal/Logout.aspx")
 {
     document.querySelector("#ctl00_cphContent_lnkRelogin").click();
 }
