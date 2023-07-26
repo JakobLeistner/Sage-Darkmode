@@ -46,6 +46,22 @@ Scrollbar
 
 
 
+/* Loading div while logging in */
+#ctl00_cphContent_divLogout > .sagehr-roundpanel > table > tbody > tr > td
+{
+    background: var(--background) !important;
+}
+#ctl00_cphContent_lblLogout1, #ctl00_cphContent_lblLogout2
+{
+    color: var(--text);
+}
+#divApiLogin > .sagehr-roundpanel > table > tbody > tr > td, #divApiLogin > .sagehr-roundpanel > table > tbody > tr > td > table > tbody > tr > td
+{
+    background: var(--background);
+}
+
+
+
 /* Main Page background and inheritance */
 #ctl00_sageHrFooter, #ctl00_contentContainer, #ctl00_footer, .sagehr-layout-footer
 {
@@ -178,7 +194,7 @@ NavBar
 }
 #asyncBackground, #dashboard
 {
-    top: 10px !important;
+    top: 7px !important;
 }
 
 
@@ -223,7 +239,12 @@ NavBar
 }
 .k-link
 {
-    filter: invert(1) !important;
+    /* filter: invert(1) !important; */
+    color: var(--text) !important;
+}
+.k-hover > .k-link
+{   
+    background: var(--backgroundNavBar) !important;
 }
 
 
@@ -537,7 +558,7 @@ img[src="/HRPortal/Content/Images/process_16x16.png"]
 /* upper select my calendar / team calendar */
 .sagehr-layout-container > .sagehr-layout-header > .sagehr-layout-header-snav > .k-menu-horizontal
 {
-    background: var(--background) !important;
+    background: var(--background2) !important;
     border: none;
 }
 .sagehr-layout-container > .sagehr-layout-header > .sagehr-layout-header-snav > .k-menu-horizontal > .k-item > .k-link

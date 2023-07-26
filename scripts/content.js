@@ -54,45 +54,63 @@ setInterval(() => {
 }, 250);
 
 
-//////////////////////////////////////////////////////
-/// Initialize toggling time panel on landing page ///
-//////////////////////////////////////////////////////
-
-var iframe_loaded = false;
-var time_panel_visibility = window.localStorage.getItem("time_panel_visibility");
-var td_state = time_panel_visibility == "invisible" ? "StartmenueItem" : "StartmenueItemSelected";
-
-var list = document.querySelector(".StartmenueItems > table > tbody");
-var toggle_time_element_str = '<tr id="ctl00_cphContent_trZeitenbuchung"> <td class="' + td_state + '"> <span class="dxeBase_None DXLabel">Zeitenbuchung</span> </td> </tr>';
-list.innerHTML += toggle_time_element_str;
-var toggle_time_element = document.querySelector("#ctl00_cphContent_trZeitenbuchung");
-
-
-toggle_time_element.onclick = () =>
-{
-    var iframe = document.querySelector("#iframe_time_panel"); 
-
-    if (time_panel_visibility == "invisible" && iframe_loaded) {
-        window.localStorage.setItem("time_panel_visibility", "visible");
-        time_panel_visibility = "visible";
-        toggle_time_element.children[0].classList.add("StartmenueItemSelected");
-        toggle_time_element.children[0].classList.remove("StartmenueItem");
-        iframe.style.display = "block";
-    } else { 
-        window.localStorage.setItem("time_panel_visibility", "invisible");
-        time_panel_visibility = "invisible";
-        toggle_time_element.children[0].classList.add("StartmenueItem");
-        toggle_time_element.children[0].classList.remove("StartmenueItemSelected");
-        iframe.style.display = "none";
-    }
-}
-
-////////////////////////////////////////////
-/// Load time panel on landing page ///
-////////////////////////////////////////////
-
+// check for landing page
 if (window.location.href == "https://mportal.infoteam.de/mportal/Content/Home.aspx")
 {
+    //////////////////////////////////////////////////////
+    /// Initialize toggling time panel on landing page ///
+    //////////////////////////////////////////////////////
+
+    var iframe_loaded = false;
+    var time_panel_visibility = window.localStorage.getItem("time_panel_visibility");
+    var td_state = time_panel_visibility == "invisible" ? "StartmenueItem" : "StartmenueItemSelected";
+
+    var list = document.querySelector(".StartmenueItems > table > tbody");
+    var toggle_time_element_str = '<tr id="ctl00_cphContent_trZeitenbuchung"> <td class="' + td_state + '"> <span class="dxeBase_None DXLabel">Zeitenbuchung</span> </td> </tr>';
+    list.innerHTML += toggle_time_element_str;
+    var toggle_time_element = document.querySelector("#ctl00_cphContent_trZeitenbuchung");
+
+
+    toggle_time_element.onclick = () =>
+    {
+        var iframe = document.querySelector("#iframe_time_panel"); 
+
+        if (time_panel_visibility == "invisible" && iframe_loaded) {
+            window.localStorage.setItem("time_panel_visibility", "visible");
+            time_panel_visibility = "visible";
+            toggle_time_element.children[0].classList.add("StartmenueItemSelected");
+            toggle_time_element.children[0].classList.remove("StartmenueItem");
+            iframe.style.display = "block";
+        } else { 
+            window.localStorage.setItem("time_panel_visibility", "invisible");
+            time_panel_visibility = "invisible";
+            toggle_time_element.children[0].classList.add("StartmenueItem");
+            toggle_time_element.children[0].classList.remove("StartmenueItemSelected");
+            iframe.style.display = "none";
+        }
+    }
+
+
+
+
+    // var butcher_iframe = document.createElement('iframe');
+    // butcher_iframe.style.display = "none";
+    // butcher_iframe.src = "https://metzgerei-angermueller.de";
+    // butcher_iframe.onload = () => {
+    //     var table = butcher_iframe.contentWindow.document.querySelector(".col-xl-6 > table > tbody");
+    //     var th = table.querySelectorAll("tr > th");
+    //     th.forEach(element => {
+    //         console.log(element.querySelectorAll("span")[1].innerHTML);
+    //     });
+    // }
+
+    // document.body.appendChild(butcher_iframe);
+
+
+    ///////////////////////////////////////
+    /// Load time panel on landing page ///
+    ///////////////////////////////////////
+
     var iframe = document.createElement('iframe');
     iframe.style.display = "none";
     const URLs = [
@@ -151,5 +169,5 @@ if (window.location.href == "https://mportal.infoteam.de/mportal/Content/Home.as
 
 if (window.location.href == "https://mportal.infoteam.de/mportal/Logout.aspx" || window.location.href == "https://mportal.infoteam.de/mportal/Login.aspx?logout=true")
 {
-    document.querySelector(".dxeHyperlink").click();
+    document.querySelector("#ctl00_cphContent_lnkRelogin").click();
 }
